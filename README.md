@@ -4,6 +4,9 @@ Docker image to control clearpath warthog using PS4 controller
 ### Cloning
 
 ```
+# ssh (if this gives error, try https)
+git clone --recurse-submodules https://github.com/prajapatisarvesh/warthog_ps4.git
+# https
 git clone --recurse-submodules git@github.com:prajapatisarvesh/warthog_ps4.git
 ```
 
