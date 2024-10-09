@@ -40,9 +40,12 @@ RUN wget https://packages.clearpathrobotics.com/public.key -O - | sudo apt-key a
 RUN sh -c 'echo "deb https://packages.clearpathrobotics.com/stable/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/clearpath-latest.list'
 RUN apt update
 RUN apt install -y ros-noetic-warthog-desktop
+RUN apt install -y python3-pip
+RUN pip3 install ds4drv
+RUN apt install -y ros-noetic-joy
 COPY . .
 # ROS IP ADDRESS
-ENV ROS_IP=192.168.1.10
-ENV ROS_MASTER_URI=http://192.168.1.102:11311
+ENV ROS_IP=192.168.131.101
+ENV ROS_MASTER_URI=http://192.168.131.1:11311
 WORKDIR /app/ssrr_ws
 RUN . /opt/ros/noetic/setup.sh && catkin build
